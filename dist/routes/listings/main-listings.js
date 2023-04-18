@@ -89,8 +89,8 @@ mainListings.get("/listings/:listing", async (req, res) => {
         });
         const onWatchlist = await models_1.Watchlist.findAll({
             where: {
-                userid: id[0].id,
-                listingid: parseInt(req.params.listing)
+                userId: id[0].id,
+                listingId: parseInt(req.params.listing)
             }
         });
         res.render("listings/listing", { username: login_1.authenticated.name, info: listing[0], watchlist: (onWatchlist.length > 0 && !onWatchlist[0].onWatchlist) ? "Add to " : "Remove from", comments: comments });
@@ -99,7 +99,7 @@ mainListings.get("/listings/:listing", async (req, res) => {
 mainListings.post("/comment/:listing", async (req, res) => {
     const userId = (await models_1.User.findAll({
         where: {
-            username: login_1.authenticated.name
+            username: login_1.authenticated.name.toLowerCase()
         }
     }))[0].id;
     const newComment = await models_1.Comment.create({ userId: userId, listingId: parseInt(req.params.listing), textContent: req.body.textContent, dateOfCreation: findDate(), creator: login_1.authenticated.name });
@@ -180,8 +180,8 @@ mainListings.post("/listings/:listing", async (req, res) => {
         });
         const onWatchlist = await models_1.Watchlist.findAll({
             where: {
-                userid: id[0].id,
-                listingid: req.params.listing
+                userId: id[0].id,
+                listingId: req.params.listing
             }
         });
         res.render("listings/listing", { username: login_1.authenticated.name, info: listing[0], watchlist: !onWatchlist[0].onWatchlist ? "Add to " : "Remove from", comments: comments });
