@@ -2,10 +2,8 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const https_1 = __importDefault(require("https"));
 const signup_1 = __importDefault(require("./routes/auth/signup"));
 const login_1 = __importDefault(require("./routes/auth/login"));
 const main_listings_1 = __importDefault(require("./routes/listings/main-listings"));
@@ -28,16 +26,7 @@ app.use((_, res) => {
         res.render("404", { authenticated: true, username: login_2.authenticated.name });
     }
 });
-const DEV_PORT = 3003;
-const PORT = (_a = process.env.PORT) !== null && _a !== void 0 ? _a : DEV_PORT;
-if (PORT === DEV_PORT) {
-    app.listen(PORT, () => {
-        console.log(`Server started at http://localhost:${PORT}`);
-    });
-}
-else {
-    https_1.default.createServer(app).listen(PORT, () => {
-        console.log(`Server started at https://cappumerce.onrender.com`);
-    });
-}
+app.listen(3003, () => {
+    console.log(`Server started at http://localhost:3004`);
+});
 //# sourceMappingURL=index.js.map
