@@ -3,6 +3,7 @@
 A fullstack basic e-commerce website! (Note: this is a mockup website, and thus there is no built in payment system.)
 
 ## Technologies used
+Main languages and tools
 * Typescript with NodeJS
 * EJS
 * Postgresql + Sequelize
