@@ -8,3 +8,5 @@ An e-commerce website made with the following technologies:
 Aided via the following frameworks
 * Bootstrap
 * ExpressJS
+
+## Features
