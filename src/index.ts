@@ -29,4 +29,7 @@ app.use((_: Request, res: Response) => {
     // comment
 });
 
-app.listen(4000);
+const port = process.env.PORT || 3003;
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});

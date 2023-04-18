@@ -26,5 +26,8 @@ app.use((_, res) => {
         res.render("404", { authenticated: true, username: login_2.authenticated.name });
     }
 });
-app.listen(4000);
+const port = process.env.PORT || 3003;
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});
 //# sourceMappingURL=index.js.map

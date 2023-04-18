@@ -62,6 +62,9 @@ class Comment extends Model {
 }
 
 
+
+// // hello
+
 User.init(
     {
         id: {
@@ -210,6 +213,7 @@ Like.init(
         modelName: "Like"
     }
 )
+
 
 
 export { User, Listing, Watchlist, Comment, Like }
