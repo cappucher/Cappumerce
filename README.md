@@ -12,7 +12,7 @@ Frameworks used:
 * EJS
 * Bootstrap
 
-Dev Dependencies
+Dev Dependencies:
 * Nodemon
 * TSC
 
