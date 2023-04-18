@@ -29,5 +29,4 @@ Around a little more than a month. I first learned NodeJS at the beginning of Ma
 
 After finishing this project, I finally decided to learn ExpressJS and SQL. Thus, I was able to create my first prototype of Cappumerce. However, this draft was missing a lot of features, including comments and the ability to end listings. In addition, it was pretty tedious having to write raw SQL statements in my code.
 
-This brings me to April of 2023, where I learned sequelize and migrated to PostGresql. I finally finished my project, but I still am learning new technologies to make my projects better. In the future, I am considering using React with NextJS, and using a REST API or GraphQL.
-
+This brings me to April of 2023, where I learned sequelize and migrated to PostgreSQL. I finally finished my project, but I still am learning new technologies to make my projects better. In the future, I am considering using React with NextJS, and using a REST API or GraphQL.
