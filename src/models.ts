@@ -1,7 +1,8 @@
 import { Sequelize, Model, DataTypes } from "sequelize";
+require('dotenv').config({ path: '.env.local' }); // Load environment variables from .env.local file
 
-const sequelize = new Sequelize("ecommercedb_l6yz", "cappucher", "24vpJNRk504kY06GnK34sazfjEbdFXhI", {
-    host: "dpg-cgsrr63k9u58arku7ag0-a.oregon-postgres.render.com",
+const sequelize = new Sequelize(process.env.DATABASE_NAME!, "cappucher", String(process.env.DATABASE_PASSWORD!), {
+    host: process.env.DATABASE_HOST!,
     port: 5432,
     dialect: "postgres",
     dialectOptions: {
@@ -17,6 +18,7 @@ const sequelize = new Sequelize("ecommercedb_l6yz", "cappucher", "24vpJNRk504kY0
         await sequelize.authenticate();
         console.log('Connection has been established successfully.');
       } catch (error) {
+        console.log(process.env.DATABASE_PASSWORD!)
         console.error('Unable to connect to the database:', error);
       }
 })();

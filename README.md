@@ -5,7 +5,7 @@ A fullstack e-commerce website! (Note: Because this is a mockup website, there i
 ## Technologies used
 Main tools:
 * Typescript
-* Sequelize + PostGresql
+* Sequelize + PostgreSQL
 * ExpressJS + NodeJS
 
 Frameworks used:

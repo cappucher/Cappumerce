@@ -2,8 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Like = exports.Comment = exports.Watchlist = exports.Listing = exports.User = void 0;
 const sequelize_1 = require("sequelize");
-const sequelize = new sequelize_1.Sequelize("ecommercedb_l6yz", "cappucher", "24vpJNRk504kY06GnK34sazfjEbdFXhI", {
-    host: "dpg-cgsrr63k9u58arku7ag0-a.oregon-postgres.render.com",
+require('dotenv').config({ path: '.env.local' });
+const sequelize = new sequelize_1.Sequelize(process.env.DATABASE_NAME, "cappucher", String(process.env.DATABASE_PASSWORD), {
+    host: process.env.DATABASE_HOST,
     port: 5432,
     dialect: "postgres",
     dialectOptions: {
@@ -19,6 +20,7 @@ const sequelize = new sequelize_1.Sequelize("ecommercedb_l6yz", "cappucher", "24
         console.log('Connection has been established successfully.');
     }
     catch (error) {
+        console.log(process.env.DATABASE_PASSWORD);
         console.error('Unable to connect to the database:', error);
     }
 })();
